@@ -1,0 +1,5 @@
+/ssh_host_rsa_key
+/ssh_host_rsa_key.pub
+/sshd_config
+/sshd.pid
+/authorized_keys
