@@ -4,13 +4,29 @@
 
 Inspired by [this blog post](https://www.codejam.info/2021/11/standalone-userland-ssh-server.html).
 
+## Overview
+
+Sometimes you want to access a host via SSH but there's no SSH server
+configured on the system. And maybe we don't have `root` access (or
+don't want to setup a "proper" SSH server as `root`).
+
+This simple configuration allows to run a SSH server on an unprivileged
+port, that allows login with a single user (the one running the server),
+either via SSH keys or password.
+
 ## Usage
 
 ```sh
 git clone https://github.com/valeriangalliat/sshd-on-the-go.git
 cd sshd-on-the-go
-make setup
-# Add your public key to the `authorized_keys` file
+
+# Setup with SSH key
+make setup-with-key
+# Then, add your public key to the `authorized_keys` file
+
+# Alternatively, setup with password
+make setup-with-password
+
 make start
 # Profit 🎉
 ```
